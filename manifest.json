@@ -1,0 +1,14 @@
+{
+    "manifest_version": 3,
+    "name": "Homework Scheduler Launcher",
+    "version": "1.0",
+    "description": "Automatically launches the homework scheduling interface when Google Calendar is opened.",
+    "permissions": ["tabs", "scripting"],
+    "host_permissions": ["https://calendar.google.com/"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "action": {
+      "default_title": "Homework Scheduler"
+    }
+  }
