@@ -1,2 +1,2 @@
 # Personal
-Personal Projects
+Personal Projects and Ideas.
