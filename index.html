@@ -23,6 +23,23 @@
             text-align: left;
         }
 
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #aaa;
+        }
 
         footer {
             background-color: #1a1a1a;
@@ -38,6 +55,10 @@
     max-width: 600px;
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+        
+     html {
+    scroll-behavior: smooth;
 }
 
 .content-block h2 {
@@ -78,11 +99,18 @@
 <body>
 
     <header>
+        <div class="header-content">
         <h1>Conner Meyer</h1>
+            <nav class="nav-links">
+                <a href="#about">About Me</a>
+                <a href="#projects">Projects</a>
+                <a href="#connect">Connect</a>
+            </nav>
+        </div>
     </header>
 
     <main>
-        <section class="content-block">
+        <section id="about" class="content-block">
         <div class="about-flex">
         <div class="about-text">
             <h2>About Me</h2>
@@ -102,7 +130,7 @@
             
     </section>
 
-    <section class="content-block">
+    <section id="projects" class="content-block">
         <h2>Projects:</h2>
         <ul>
             <li><p><strong>Homework Scheduler:</strong>: This project incorporates Google Calendar's API to allow for a localhost website to add tasks to my Google
@@ -114,9 +142,8 @@
         </ul>
     </section>
 
-    <section class="content-block">
+    <section id="connect" class="content-block">
         <h2>Connect with Me:</h2>
-        <a name="Connect with Me">Text</a> 
         <p>
             <a href="https://www.linkedin.com/in/conner-meyer-aa49032b9/" target="_blank">
                 <i class="fab fa-linkedin"></i> 
