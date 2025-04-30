@@ -1,2 +1,2 @@
-# Personal
-Personal Projects
+# GitHub Pages
+Personal website
