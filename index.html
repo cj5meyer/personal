@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework Scheduler</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto p-6">
+        <h1 class="text-4xl font-bold text-center mb-6">Homework Scheduler</h1>
+
+        <form action="{{ url_for('add_task') }}" method="POST" class="bg-white p-6 rounded shadow mb-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <input type="text" name="title" placeholder="Task Title" required class="border p-2 rounded w-full">
+                <textarea name="description" placeholder="Task Description" required class="border p-2 rounded w-full"></textarea>
+                <input type="datetime-local" name="due_date" required class="border p-2 rounded w-full">
+                <input type="number" name="estimated_minutes" placeholder="Duration (minutes)" required min="30" class="border p-2 rounded w-full">
+                <input type="number" name="priority" placeholder="Priority (1-10)" required min="1" max="10" class="border p-2 rounded w-full">
+            </div>
+            <div class="mt-4">
+                <label for="avoid_days" class="block font-semibold mb-2">Avoid Days:</label>
+                <div class="grid grid-cols-3 gap-2">
+                    {% for day in ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'] %}
+                    <label class="inline-flex items-center">
+                        <input type="checkbox" name="avoid_days" value="{{ day }}" class="form-checkbox">
+                        <span class="ml-2">{{ day }}</span>
+                    </label>
+                    {% endfor %}
+                </div>
+            </div>
+            <button type="submit" class="mt-6 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Add Task</button>
+        </form>
+
+        <h2 class="text-2xl font-semibold mb-4">Current Tasks</h2>
+        <ul class="space-y-4">
+            {% for task in tasks %}
+            <li class="bg-white p-4 rounded shadow">
+                <div class="text-lg font-bold">{{ task.title }}</div>
+                <div class="text-gray-600 mb-2">{{ task.description }}</div>
+                <div class="text-sm">Due: {{ task.due_date }}</div>
+                <div class="text-sm">Priority: {{ task.priority }}</div>
+                <div class="text-sm">Duration: {{ task.estimated_time }} min</div>
+            </li>
+            {% endfor %}
+        </ul>
+
+        <form action="/schedule" method="POST" class="mt-10">
+            <button type="submit" class="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700">Schedule Tasks</button>
+        </form>
+    </div>
+</body>
+</html>
