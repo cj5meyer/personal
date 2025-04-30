@@ -44,12 +44,32 @@
 }
 
 .content-block a {
-    color: #0077b5; /* Nice LinkedIn blue */
+    color: #0077b5;
     text-decoration: none;
 }
 
 .content-block a:hover {
     text-decoration: underline;
+}
+
+        .profile-pic {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 20px auto;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+}
+        .social-pic {
+        width: 30px;
+        height: 30px;
+        vertical-align: middle;
+        transition: transform 0.2s;
+        margin: 0 auto 5px auto;
+        }
+    .social-pic:hover {
+    transform: scale(1.1);
 }
     </style>
 </head>
@@ -78,9 +98,16 @@
     <section class="content-block">
         <h2>Connect with Me</h2>
         <p>
-            <a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a> |
-            <a href="https://github.com/yourusername" target="_blank">GitHub</a> |
-            <a href="https://instagram.com/yourusername" target="_blank">Instagram</a>
+            <a href="https://www.linkedin.com/in/conner-meyer-aa49032b9/" target="_blank">
+                <img src="linkedin.jpg" alt="linkedin" class="social-icon"
+                    </a> |
+            <a href="https://github.com/cj5meyer" target="_blank">GitHub
+                <img src=github.png" alt="github" class="social-icon"
+                    </a> |
+            <a href="https://instagram.com/conner_meyer5" target="_blank">
+                <img src="instagram.jpg" alt="instagram" class="social-icon"
+                    </a>
+                
         </p>
     </section>
     </main>
